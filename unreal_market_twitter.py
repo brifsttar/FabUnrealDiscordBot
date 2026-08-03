@@ -36,6 +36,7 @@ def send_discord(product):
     blacklist = [
         '909a6f2f-8f96-403d-bf00-293179c56025', # Anydraftscgi  (banned?)
         'b9f9f100-f1ce-44ca-a025-cc2f76e84a2a', # https://www.fab.com/sellers/Daz3D
+        '608dcc98-3800-44b3-be41-32f54985fa47', # https://www.fab.com/sellers/ScansLibrary
     ]
     if product['user']['uid'] in blacklist :
         log.info(f"Skipping {asset_name} ({asset_url}), reason: blacklisted creator")
@@ -196,7 +197,7 @@ def main():
     try:
         u = UnrealMarketBot()
         u.check_for_new_products()
-        u.check_free_limited_time()
+        # u.check_free_limited_time()
     except Exception as e:
         log.exception(e)
 
