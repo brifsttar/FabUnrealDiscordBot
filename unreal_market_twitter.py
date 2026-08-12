@@ -197,7 +197,7 @@ def main():
     try:
         u = UnrealMarketBot()
         u.check_for_new_products()
-        # u.check_free_limited_time()
+        u.check_free_limited_time()
     except Exception as e:
         log.exception(e)
 
