@@ -17,7 +17,7 @@ def send_discord(product):
     try:
         asset_category = product['category']['path']
         asset_category = "/".join([x.capitalize() for x in re.split('-|/', asset_category)])
-    except (IndexError, KeyError):
+    except (IndexError, KeyError, TypeError):
         asset_category = "???"
     msg = []
 
